@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.mat-field {
+    width: 300px;
+    padding: 0;
+    background-color: transparent;
+}
+.container {
+    margin-top: 50px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.header {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px ;
+}
+.button-container {
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+button {
+    width: 100px;
+}
+mat-card {
+    margin: 10px;
+    background-color: lightblue;
+}

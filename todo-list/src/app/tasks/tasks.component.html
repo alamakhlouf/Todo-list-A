@@ -1,0 +1,31 @@
+<div class="header">
+    <h2>TODO LIST</h2>
+    </div>
+    <div class="container">
+      <mat-form-field appearance="legacy" class="mat-field">
+        <mat-label>Task Field</mat-label>
+        <input matInput placeholder="Enter Task Here" required #task  [(ngModel)]="value" >
+        <mat-icon matSuffix>check</mat-icon>
+      </mat-form-field>
+    
+      <mat-form-field appearance="fill" class="mat-field">
+        <mat-label>Description</mat-label>
+        <textarea rows="5" matInput required placeholder="Enter Task Description here" #desc
+        [(ngModel)]="description"></textarea>
+      </mat-form-field>
+    </div>
+    <div class="button-container">
+      <button mat-raised-button color="primary" *ngIf="show" (click)="postTask(task.value,desc.value)">Create</button>
+      <button mat-raised-button color="primary" *ngIf="!show" (click)="save(task.value,desc.value)">Save</button>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="start none"  >
+      <mat-card *ngFor=" let task of tasks">
+        <p hidden>{{task.id}}</p>
+        <mat-card-title>{{task.taskName}}</mat-card-title>
+        <mat-card-subtitle>{{task.taskDescription}}</mat-card-subtitle>
+        <mat-card-actions align="end">
+          <button mat-button (click)="edit(task.taskName,task.taskDescription,task.id)">Edit</button>
+          <button mat-button (click)="delete(task.taskName,task.taskDescription,task.id)">Delete</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
